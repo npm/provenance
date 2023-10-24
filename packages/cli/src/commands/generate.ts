@@ -53,9 +53,11 @@ export default class Generate extends Command {
         subject.digest
       )}`
     );
-    const provenance = generateProvenance(subject, process.env);
+    // const provenance = generateProvenance(subject, process.env);
+    const provenance = {test: 1}
 
     if (flags['output-file']) {
+      bug(`Writing provenance to ${flags['output-file']}`)
       await writeFile(
         flags['output-file'],
         JSON.stringify(provenance, null, 2)
