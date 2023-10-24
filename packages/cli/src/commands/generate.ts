@@ -15,7 +15,7 @@ type Subject = {
 
 export default class Generate extends Command {
   static override description =
-    'Generate SLSA provenance information on supported cloud CI/CD vendors.';
+    'Generate SLSA provenance statement on supported cloud CI/CD vendors.';
   static override examples = ['<%= config.bin %> <%= command.id %>'];
 
   static override flags = {
@@ -56,7 +56,7 @@ export default class Generate extends Command {
     const provenance = generateProvenance(subject, process.env);
 
     if (flags['output-file']) {
-      bug(`Writing provenance to ${flags['output-file']}`);
+      bug(`Writing provenance statement to ${flags['output-file']}`);
       await writeFile(
         flags['output-file'],
         JSON.stringify(provenance, null, 2)
