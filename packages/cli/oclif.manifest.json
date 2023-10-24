@@ -1,0 +1,64 @@
+{
+  "commands": {
+    "generate": {
+      "aliases": [],
+      "args": {
+        "subject-path": {
+          "description": "subject file to generate statement for",
+          "name": "subject-path",
+          "required": false
+        }
+      },
+      "description": "Generate SLSA provenance information on supported cloud CI/CD vendors.",
+      "examples": [
+        "<%= config.bin %> <%= command.id %>"
+      ],
+      "flags": {
+        "subject-name": {
+          "description": "Subject name to use in statement",
+          "name": "subject-name",
+          "required": false,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "subject-digest": {
+          "description": "Subject digest to use in statement",
+          "name": "subject-digest",
+          "required": false,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "output-file": {
+          "aliases": [
+            "output",
+            "out"
+          ],
+          "char": "o",
+          "description": "write output to file",
+          "name": "output-file",
+          "required": false,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "generate",
+      "pluginAlias": "@npm/provenance-cli",
+      "pluginName": "@npm/provenance-cli",
+      "pluginType": "core",
+      "strict": true,
+      "enableJsonFlag": false,
+      "isESM": false,
+      "relativePath": [
+        "dist",
+        "commands",
+        "generate.js"
+      ]
+    }
+  },
+  "version": "0.0.1"
+}

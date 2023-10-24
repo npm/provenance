@@ -1,0 +1,65 @@
+{
+  "name": "@npm/provenance-cli",
+  "version": "0.0.1",
+  "description": "Generate SLSA provenance",
+  "author": "Philip Harrison @feelepxyz",
+  "license": "Artistic-2.0",
+  "keywords": [
+    "cli",
+    "npm",
+    "provenance"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "provenance": "./bin/run"
+  },
+  "files": [
+    "/bin",
+    "/dist",
+    "/oclif.manifest.json"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "clean": "shx rm -rf dist",
+    "prebuild": "npm run clean",
+    "build": "tsc -b",
+    "postpack": "shx rm -f oclif.manifest.json",
+    "prepack": "npm run build && oclif manifest && npm run readme",
+    "dev:bin": "npm run build && ./bin/run",
+    "readme": "oclif readme --no-aliases && shx sed -i \"s/^_See code:.*$//g\" README.md",
+    "generate": "npm run build && ./bin/run generate"
+  },
+  "dependencies": {
+    "@oclif/color": "^1.0.13",
+    "@oclif/core": "^3",
+    "@oclif/plugin-help": "^6",
+    "ci-info": "^3.9.0"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.10",
+    "oclif": "^4.0.3",
+    "tslib": "^2.6.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npm/provenance.git"
+  },
+  "homepage": "https://github.com/npm/provenance/tree/main/packages/cli#readme",
+  "bugs": "https://github.com/npm/provenance/issues",
+  "oclif": {
+    "bin": "provenance",
+    "dirname": "provenance",
+    "commands": "./dist/commands",
+    "plugins": [
+      "@oclif/plugin-help"
+    ],
+    "topicSeparator": " "
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,9 @@
+dist
+node_modules
+coverage
+.tool-versions
+hack/ca/store
+hack/ca/*.crt
+tsconfig.tsbuildinfo
+.vscode
+*.code-workspace
