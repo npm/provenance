@@ -42,4 +42,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Generate provenance
-        run: npm run generate --workspace=cli -- README.md
+        run: DEBUG=* npm run generate --workspace=packages/cli -- README.md -o provenance.sigstore.json
+      - name: Upload artifact
+        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3
+        with:
+          name: provenance.sigstore.json
+          path: provenance.sigstore.json
