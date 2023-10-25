@@ -12,7 +12,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "provenance": "./bin/run"
+    "provenance": "bin/run"
   },
   "files": [
     "/bin",
@@ -21,7 +21,7 @@
   ],
   "publishConfig": {
     "access": "public",
-    "provenance": true
+    "provenance": false
   },
   "scripts": {
     "clean": "shx rm -rf dist",
