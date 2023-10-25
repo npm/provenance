@@ -1,4 +1,4 @@
-# @npm/provenance-cli
+# @npmcli/provenance-cli
 
 CLI for generating SLSA provenance on GitHub Actions and GitLab CI.
 
@@ -7,11 +7,11 @@ CLI for generating SLSA provenance on GitHub Actions and GitLab CI.
 <!-- usage -->
 
 ```sh-session
-$ npm install -g @npm/provenance-cli
+$ npm install -g @npmcli/provenance-cli
 $ provenance COMMAND
 running command...
 $ provenance (--version)
-@npm/provenance-cli/0.0.1 darwin-arm64 node-v18.17.1
+@npmcli/provenance-cli/0.0.1 darwin-arm64 node-v18.17.1
 $ provenance --help [COMMAND]
 USAGE
   $ provenance COMMAND

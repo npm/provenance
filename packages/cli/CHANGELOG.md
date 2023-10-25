@@ -1,1 +1,1 @@
-# @npm/provenance-cli
+# @npmcli/provenance-cli

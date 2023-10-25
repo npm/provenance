@@ -1,5 +1,5 @@
 {
-  "name": "@npm/provenance-cli",
+  "name": "@npmcli/provenance-cli",
   "version": "0.0.1",
   "description": "Generate SLSA provenance",
   "author": "Philip Harrison @feelepxyz",
