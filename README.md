@@ -61,16 +61,16 @@ npm performs server-side verifications and integrity checks on the provenance bu
 - Validate provenance was generated on a cloud-hosted runner by comparing the `Runner Environment`  extension in the [signing cert](https://github.com/sigstore/fulcio/blob/main/docs/oid-info.md#13614157264111--runner-environment)  against allowed values 
 - Validate provenance was generated on a public repository/project by comparing the `Source Repository Visibility At Signing`  extension in the [signing cert](https://github.com/sigstore/fulcio/blob/main/docs/oid-info.md#13614157264122--source-repository-visibility-at-signing) against allowed values
 - Verify extensions in the [signing certificate](https://github.com/sigstore/fulcio/blob/main/docs/oid-info.md) (non-falsifiable) match what's in the SLSA provenance statement ([generated in the npm/cli]( https://github.com/npm/cli/blob/latest/workspaces/libnpmpublish/lib/provenance.js) and falsifiable by modifying the env vars during build)
-- `sigstore.verify(provenanceBundle)`
+- Verify provenance was signed and uploaded to Sigstore: `sigstore.verify(provenanceBundle)`
   - Downloads the latest root certificate and public keys for Sigstore public good by  using tuf-js
-- Verify the sha-512 digest of the published tarball matches what's in the signed [provenance statement subject](https://github.com/npm/cli/blob/0dc63323f6566e6c94e03044c03d14f9a0a5142c/workspaces/libnpmpublish/lib/publish.js#L133-L136)
+- Verify the published package name, version (PURL) and tarball `sha-512` matches what's in the signed [provenance statement subject](https://github.com/npm/cli/blob/0dc63323f6566e6c94e03044c03d14f9a0a5142c/workspaces/libnpmpublish/lib/publish.js#L133-L136)
 - Verify the `repository` / `repository.url` in the uploaded `package.json` matches what's in the [signing certificate](https://github.com/sigstore/fulcio/blob/main/docs/oid-info.md#13614157264112--source-repository-uri) `Source Repository URI` extension
 
 When verification is succesful npm attests the publish with by signing a [publish attestation](https://github.com/npm/attestation/tree/main/specs/publish/v0.1). This proves the registry accepted the published version /w proof on Rekor to keep the registry honest.
 
 Public signing keys for the signed `publish attestation` are distributed via the public [Sigstore Trust Root](https://github.com/sigstore/root-signing) in a target that matches the registry hostname: [registry.npmjs.org](https://github.com/sigstore/root-signing/tree/main/repository/repository/targets/registry.npmjs.org). 
 
-This means another npm registry registry can host public keys using the same hostname scheme and these will be [discovered by the npm cli](https://github.com/npm/cli/blob/latest/lib/commands/audit.js#L199-L200) during verification. 
+This means another npm registry can distribute public keys using the same hostname scheme and these will be [discovered by the npm cli](https://github.com/npm/cli/blob/latest/lib/commands/audit.js#L199-L200) during verification.
 
 ## Verifying attestations with `npm audit signatures`
 ### Overview
