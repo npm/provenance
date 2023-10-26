@@ -130,6 +130,8 @@ The following table documents which combinations of Sigstore bundle versions, `s
 
 ## Resources
 - Talk: Build provenance for package registries
+- [Blog: Introducing npm package provenance](https://github.blog/2023-04-19-introducing-npm-package-provenance/)
+- [Docs: Generating provenance statements](https://docs.npmjs.com/generating-provenance-statements)
 - [Article: Build Provenance for All Package Registries](https://repos.openssf.org/build-provenance-for-all-package-registries)
 - [Example: Publishing npm package with provenance](https://github.com/npm/provenance-demo)
 - [RFC: Link npm packages to the originating source code repository and build](https://github.com/npm/rfcs/blob/main/accepted/0049-link-packages-to-source-and-build.md)
