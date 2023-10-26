@@ -6,6 +6,44 @@ Details on npm provenance
 
 - [`@npmcli/provenance-cli`](./packages/cli) - Command line interface for generating SLSA provenance on supported CI/CD vendors.
 
+## Demo: Generating signed SLSA provenance
+
+### GitHub Actions
+[`.github/workflows/provenance.yml`](https://github.com/npm/provenance/blob/main/.github/workflows/provenance.yml)
+```
+name: SLSA Provenance
+
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+
+jobs:
+  provenance:
+    name: Generate signed SLSA provenance with Sigstore
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup node
+        uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65 # v4
+        with:
+          node-version: 18
+          cache: npm
+      - name: Generate dummy package
+        run: echo "hello world" > pkg && tar -czvf pkg.tgz pkg
+      - name: Generate provenance statement with package as attestation subject
+        run: npx @npmcli/provenance-cli generate pkg.tgz -o provenance-statement.json
+      - name: Sign provenance statement
+        run: npx @sigstore/cli attest ./provenance-statement.json -o provenance.sigstore.json
+      - name: Verify provenance statement
+        run: npx @sigstore/cli verify provenance.sigstore.json
+      - name: Upload artifact
+        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3
+        with:
+          name: provenance-sigstore.json
+          path: provenance.sigstore.json
+```
+
 ## Publishing with provenance
 ### Overview
 - [npm/cli](https://github.com/npm/cli)
