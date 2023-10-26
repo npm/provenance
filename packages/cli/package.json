@@ -21,7 +21,7 @@
   ],
   "publishConfig": {
     "access": "public",
-    "provenance": false
+    "provenance": true
   },
   "scripts": {
     "clean": "shx rm -rf dist",
