@@ -13,9 +13,6 @@ jobs:
     steps:
       - name: Setup node
         uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65 # v4
-        with:
-          node-version: 18
-          cache: npm
       - name: Generate dummy package
         run: echo "hello world" > pkg && tar -czvf pkg.tgz pkg
       - name: Generate provenance statement with package as attestation subject
