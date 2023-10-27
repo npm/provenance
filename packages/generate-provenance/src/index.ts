@@ -201,7 +201,9 @@ export const generateProvenance = (
       },
     };
   } else {
-    new Error('Automatic provenance generation not supported for provider: ' + ci.name);
+    new Error(
+      'Automatic provenance generation not supported for provider: ' + ci.name
+    );
   }
   return payload;
 };
