@@ -3,7 +3,8 @@
   "compilerOptions": {
     "importHelpers": true,
     "rootDir": "src",
-    "outDir": "dist"
+    "outDir": "dist",
+    "composite": true
   },
   "exclude": ["./dist"],
 }

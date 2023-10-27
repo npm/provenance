@@ -6,4 +6,7 @@
     "outDir": "dist"
   },
   "exclude": ["./dist"],
+  "references": [
+    { "path": "../generate-provenance" }
+  ]
 }
