@@ -1,0 +1,37 @@
+{
+  "name": "@npmcli/verify-provenance",
+  "version": "0.0.0",
+  "description": "Verify SLSA provenance",
+  "author": "Philip Harrison @feelepxyz",
+  "license": "Artistic-2.0",
+  "keywords": [
+    "npm",
+    "provenance"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "clean": "shx rm -rf dist",
+    "prebuild": "npm run clean",
+    "build": "tsc -b",
+    "prepack": "npm run build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/debug": "^4.1.10",
+    "tslib": "^2.6.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npm/provenance.git"
+  },
+  "homepage": "https://github.com/npm/provenance/tree/main/packages/verify-provenance#readme",
+  "bugs": "https://github.com/npm/provenance/issues"
+}
