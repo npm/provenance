@@ -1,0 +1,39 @@
+{
+  "name": "@npmcli/generate-provenance",
+  "version": "0.0.1",
+  "description": "Generate SLSA provenance",
+  "author": "Philip Harrison @feelepxyz",
+  "license": "Artistic-2.0",
+  "keywords": [
+    "npm",
+    "provenance"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "clean": "shx rm -rf dist",
+    "prebuild": "npm run clean",
+    "build": "tsc -b",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "ci-info": "^3.9.0"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.10",
+    "tslib": "^2.6.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npm/provenance.git"
+  },
+  "homepage": "https://github.com/npm/provenance/tree/main/packages/generate-provenance#readme",
+  "bugs": "https://github.com/npm/provenance/issues"
+}
