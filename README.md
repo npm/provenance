@@ -129,7 +129,7 @@ The following table documents which combinations of Sigstore bundle versions, `s
   - [See example PR for updating to SLSA v1](https://github.com/npm/cli/pull/6613)
 
 ## Resources
-- Talk: Build provenance for package registries
+- [Talk: Build provenance for package registries](https://docs.google.com/presentation/d/1OO86MsN4rHlL6i2rzoEkvql0vCpxjB-wQyGIpZQoQBg/edit)
 - [Blog: Introducing npm package provenance](https://github.blog/2023-04-19-introducing-npm-package-provenance/)
 - [Docs: Generating provenance statements](https://docs.npmjs.com/generating-provenance-statements)
 - [Article: Build Provenance for All Package Registries](https://repos.openssf.org/build-provenance-for-all-package-registries)
