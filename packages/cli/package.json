@@ -1,6 +1,6 @@
 {
   "name": "@npmcli/provenance-cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Generate SLSA provenance",
   "author": "Philip Harrison @feelepxyz",
   "license": "Artistic-2.0",
