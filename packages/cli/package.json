@@ -37,7 +37,7 @@
     "@oclif/color": "^1.0.13",
     "@oclif/core": "^3",
     "@oclif/plugin-help": "^6",
-    "ci-info": "^3.9.0",
+    "ci-info": "^4.0.0",
     "@npmcli/generate-provenance": "^0.0.1"
   },
   "devDependencies": {
