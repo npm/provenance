@@ -24,7 +24,7 @@
     "prepack": "npm run build"
   },
   "dependencies": {
-    "ci-info": "^3.9.0"
+    "ci-info": "^4.0.0"
   },
   "devDependencies": {
     "@types/debug": "^4.1.10",
