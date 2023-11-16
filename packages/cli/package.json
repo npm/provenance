@@ -41,7 +41,7 @@
     "@npmcli/generate-provenance": "^0.0.1"
   },
   "devDependencies": {
-    "@types/debug": "^4.1.10",
+    "@types/debug": "^4.1.12",
     "oclif": "^4.0.3",
     "tslib": "^2.6.1"
   },
