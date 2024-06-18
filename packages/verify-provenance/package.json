@@ -1,6 +1,6 @@
 {
   "name": "@npmcli/verify-provenance",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Verify SLSA provenance",
   "author": "Philip Harrison @feelepxyz",
   "license": "Artistic-2.0",
