@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup node
-        uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65 # v4
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
       - name: Generate dummy package
         run: echo "hello world" > pkg && tar -czvf pkg.tgz pkg
       - name: Generate provenance statement with package as attestation subject
