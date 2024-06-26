@@ -27,8 +27,8 @@
     "ci-info": "^3.9.0"
   },
   "devDependencies": {
-    "@types/debug": "^4.1.10",
-    "tslib": "^2.6.1"
+    "@types/debug": "^4.1.12",
+    "tslib": "^2.6.3"
   },
   "repository": {
     "type": "git",
